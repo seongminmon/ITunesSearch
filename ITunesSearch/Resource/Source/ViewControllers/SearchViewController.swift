@@ -22,13 +22,27 @@ final class SearchViewController: UIViewController {
         $0.rowHeight = 100
     }
     
-    let dummyData: Observable<[String]> = Observable.just(["1", "2", "3", "4", "5"])
+    let dummyData = PublishSubject<[ItunesItem]>()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         bind()
+        
+        // 네트워크 통신 test
+        NetworkManager.shared.callRequest("kakaotalk")
+            .subscribe(with: self) { owner, value in
+                dump(value)
+                owner.dummyData.onNext(value.results)
+            } onError: { owner, error in
+                if let error = error as? APIError, let description = error.errorDescription {
+                    print(description)
+                } else {
+                    print("알 수 없는 에러")
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     func bind() {
@@ -60,5 +74,4 @@ final class SearchViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    
 }

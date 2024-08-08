@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 import SnapKit
 import Then
 
@@ -69,7 +70,9 @@ final class SearchTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCell(_ data: String) {
-        appNameLabel.text = data
+    func configureCell(_ data: ItunesItem) {
+        let url = URL(string: data.artworkUrl60)
+        appIconImageView.kf.setImage(with: url)
+        appNameLabel.text = data.trackName
     }
 }
