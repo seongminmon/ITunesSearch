@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		249F36B62C6497DA00AE58BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B52C6497DA00AE58BF /* AppDelegate.swift */; };
 		249F36B82C6497DA00AE58BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B72C6497DA00AE58BF /* SceneDelegate.swift */; };
-		249F36BA2C6497DA00AE58BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B92C6497DA00AE58BF /* MainViewController.swift */; };
+		249F36BA2C6497DA00AE58BF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B92C6497DA00AE58BF /* SearchViewController.swift */; };
 		249F36BF2C6497DB00AE58BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 249F36BE2C6497DB00AE58BF /* Assets.xcassets */; };
 		249F36C22C6497DB00AE58BF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 249F36C12C6497DB00AE58BF /* Base */; };
 		249F36CA2C64980400AE58BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 249F36C92C64980400AE58BF /* .gitignore */; };
@@ -20,18 +20,28 @@
 		249F36D72C6498FD00AE58BF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36D62C6498FD00AE58BF /* Then */; };
 		249F36DA2C64990900AE58BF /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36D92C64990900AE58BF /* Toast */; };
 		249F36DD2C64992200AE58BF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36DC2C64992200AE58BF /* Kingfisher */; };
+		249F36DF2C649ED500AE58BF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36DE2C649ED500AE58BF /* TabBarController.swift */; };
+		249F36E12C649F6400AE58BF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36E02C649F6400AE58BF /* TodayViewController.swift */; };
+		249F36E32C649F7B00AE58BF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36E22C649F7B00AE58BF /* GameViewController.swift */; };
+		249F36E52C649FA800AE58BF /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36E42C649FA800AE58BF /* AppViewController.swift */; };
+		249F36E72C649FC400AE58BF /* ArcadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36E62C649FC400AE58BF /* ArcadeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		249F36B22C6497DA00AE58BF /* ITunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249F36B52C6497DA00AE58BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		249F36B72C6497DA00AE58BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		249F36B92C6497DA00AE58BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		249F36B92C6497DA00AE58BF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		249F36BE2C6497DB00AE58BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		249F36C12C6497DB00AE58BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		249F36C32C6497DB00AE58BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		249F36C92C64980400AE58BF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		249F36CB2C64983A00AE58BF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		249F36DE2C649ED500AE58BF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		249F36E02C649F6400AE58BF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		249F36E22C649F7B00AE58BF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		249F36E42C649FA800AE58BF /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		249F36E62C649FC400AE58BF /* ArcadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +84,12 @@
 				249F36CB2C64983A00AE58BF /* APIKey.swift */,
 				249F36B52C6497DA00AE58BF /* AppDelegate.swift */,
 				249F36B72C6497DA00AE58BF /* SceneDelegate.swift */,
-				249F36B92C6497DA00AE58BF /* MainViewController.swift */,
+				249F36DE2C649ED500AE58BF /* TabBarController.swift */,
+				249F36E02C649F6400AE58BF /* TodayViewController.swift */,
+				249F36E22C649F7B00AE58BF /* GameViewController.swift */,
+				249F36E42C649FA800AE58BF /* AppViewController.swift */,
+				249F36E62C649FC400AE58BF /* ArcadeViewController.swift */,
+				249F36B92C6497DA00AE58BF /* SearchViewController.swift */,
 				249F36BE2C6497DB00AE58BF /* Assets.xcassets */,
 				249F36C02C6497DB00AE58BF /* LaunchScreen.storyboard */,
 				249F36C32C6497DB00AE58BF /* Info.plist */,
@@ -168,10 +183,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				249F36BA2C6497DA00AE58BF /* MainViewController.swift in Sources */,
+				249F36E32C649F7B00AE58BF /* GameViewController.swift in Sources */,
+				249F36BA2C6497DA00AE58BF /* SearchViewController.swift in Sources */,
+				249F36E52C649FA800AE58BF /* AppViewController.swift in Sources */,
 				249F36B62C6497DA00AE58BF /* AppDelegate.swift in Sources */,
+				249F36E12C649F6400AE58BF /* TodayViewController.swift in Sources */,
 				249F36CC2C64983A00AE58BF /* APIKey.swift in Sources */,
+				249F36DF2C649ED500AE58BF /* TabBarController.swift in Sources */,
 				249F36B82C6497DA00AE58BF /* SceneDelegate.swift in Sources */,
+				249F36E72C649FC400AE58BF /* ArcadeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
