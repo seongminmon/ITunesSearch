@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		249F36B62C6497DA00AE58BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B52C6497DA00AE58BF /* AppDelegate.swift */; };
 		249F36B82C6497DA00AE58BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B72C6497DA00AE58BF /* SceneDelegate.swift */; };
-		249F36BA2C6497DA00AE58BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B92C6497DA00AE58BF /* ViewController.swift */; };
-		249F36BD2C6497DA00AE58BF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 249F36BC2C6497DA00AE58BF /* Base */; };
+		249F36BA2C6497DA00AE58BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B92C6497DA00AE58BF /* MainViewController.swift */; };
 		249F36BF2C6497DB00AE58BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 249F36BE2C6497DB00AE58BF /* Assets.xcassets */; };
 		249F36C22C6497DB00AE58BF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 249F36C12C6497DB00AE58BF /* Base */; };
 		249F36CA2C64980400AE58BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 249F36C92C64980400AE58BF /* .gitignore */; };
+		249F36CC2C64983A00AE58BF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36CB2C64983A00AE58BF /* APIKey.swift */; };
+		249F36CF2C6498E100AE58BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36CE2C6498E100AE58BF /* SnapKit */; };
+		249F36D22C6498F500AE58BF /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36D12C6498F500AE58BF /* RxCocoa */; };
+		249F36D42C6498F500AE58BF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36D32C6498F500AE58BF /* RxSwift */; };
+		249F36D72C6498FD00AE58BF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36D62C6498FD00AE58BF /* Then */; };
+		249F36DA2C64990900AE58BF /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36D92C64990900AE58BF /* Toast */; };
+		249F36DD2C64992200AE58BF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 249F36DC2C64992200AE58BF /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		249F36B22C6497DA00AE58BF /* ITunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249F36B52C6497DA00AE58BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		249F36B72C6497DA00AE58BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		249F36B92C6497DA00AE58BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		249F36BC2C6497DA00AE58BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		249F36B92C6497DA00AE58BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		249F36BE2C6497DB00AE58BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		249F36C12C6497DB00AE58BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		249F36C32C6497DB00AE58BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		249F36C92C64980400AE58BF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		249F36CB2C64983A00AE58BF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249F36DD2C64992200AE58BF /* Kingfisher in Frameworks */,
+				249F36D42C6498F500AE58BF /* RxSwift in Frameworks */,
+				249F36D22C6498F500AE58BF /* RxCocoa in Frameworks */,
+				249F36CF2C6498E100AE58BF /* SnapKit in Frameworks */,
+				249F36DA2C64990900AE58BF /* Toast in Frameworks */,
+				249F36D72C6498FD00AE58BF /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,10 +71,10 @@
 		249F36B42C6497DA00AE58BF /* ITunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				249F36CB2C64983A00AE58BF /* APIKey.swift */,
 				249F36B52C6497DA00AE58BF /* AppDelegate.swift */,
 				249F36B72C6497DA00AE58BF /* SceneDelegate.swift */,
-				249F36B92C6497DA00AE58BF /* ViewController.swift */,
-				249F36BB2C6497DA00AE58BF /* Main.storyboard */,
+				249F36B92C6497DA00AE58BF /* MainViewController.swift */,
 				249F36BE2C6497DB00AE58BF /* Assets.xcassets */,
 				249F36C02C6497DB00AE58BF /* LaunchScreen.storyboard */,
 				249F36C32C6497DB00AE58BF /* Info.plist */,
@@ -86,6 +98,14 @@
 			dependencies = (
 			);
 			name = ITunesSearch;
+			packageProductDependencies = (
+				249F36CE2C6498E100AE58BF /* SnapKit */,
+				249F36D12C6498F500AE58BF /* RxCocoa */,
+				249F36D32C6498F500AE58BF /* RxSwift */,
+				249F36D62C6498FD00AE58BF /* Then */,
+				249F36D92C64990900AE58BF /* Toast */,
+				249F36DC2C64992200AE58BF /* Kingfisher */,
+			);
 			productName = ITunesSearch;
 			productReference = 249F36B22C6497DA00AE58BF /* ITunesSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +134,13 @@
 				Base,
 			);
 			mainGroup = 249F36A92C6497DA00AE58BF;
+			packageReferences = (
+				249F36CD2C6498E100AE58BF /* XCRemoteSwiftPackageReference "SnapKit" */,
+				249F36D02C6498F400AE58BF /* XCRemoteSwiftPackageReference "RxSwift" */,
+				249F36D52C6498FD00AE58BF /* XCRemoteSwiftPackageReference "Then" */,
+				249F36D82C64990900AE58BF /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				249F36DB2C64992200AE58BF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 249F36B32C6497DA00AE58BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,7 +158,6 @@
 				249F36CA2C64980400AE58BF /* .gitignore in Resources */,
 				249F36BF2C6497DB00AE58BF /* Assets.xcassets in Resources */,
 				249F36C22C6497DB00AE58BF /* Base in Resources */,
-				249F36BD2C6497DA00AE58BF /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				249F36BA2C6497DA00AE58BF /* ViewController.swift in Sources */,
+				249F36BA2C6497DA00AE58BF /* MainViewController.swift in Sources */,
 				249F36B62C6497DA00AE58BF /* AppDelegate.swift in Sources */,
+				249F36CC2C64983A00AE58BF /* APIKey.swift in Sources */,
 				249F36B82C6497DA00AE58BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,14 +178,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		249F36BB2C6497DA00AE58BF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				249F36BC2C6497DA00AE58BF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		249F36C02C6497DB00AE58BF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -301,9 +320,9 @@
 				INFOPLIST_FILE = ITunesSearch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +330,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ksm.ITunesSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -329,9 +352,9 @@
 				INFOPLIST_FILE = ITunesSearch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,9 +362,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ksm.ITunesSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -367,6 +394,82 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		249F36CD2C6498E100AE58BF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		249F36D02C6498F400AE58BF /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
+		249F36D52C6498FD00AE58BF /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		249F36D82C64990900AE58BF /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		249F36DB2C64992200AE58BF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		249F36CE2C6498E100AE58BF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249F36CD2C6498E100AE58BF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		249F36D12C6498F500AE58BF /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249F36D02C6498F400AE58BF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		249F36D32C6498F500AE58BF /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249F36D02C6498F400AE58BF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		249F36D62C6498FD00AE58BF /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249F36D52C6498FD00AE58BF /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		249F36D92C64990900AE58BF /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249F36D82C64990900AE58BF /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		249F36DC2C64992200AE58BF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249F36DB2C64992200AE58BF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 249F36AA2C6497DA00AE58BF /* Project object */;
 }
