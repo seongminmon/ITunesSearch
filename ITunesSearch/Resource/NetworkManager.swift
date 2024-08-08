@@ -43,7 +43,6 @@ final class NetworkManager {
                 observer.onError(APIError.invalidURL)
                 return Disposables.create()
             }
-            
             let queryItems: [URLQueryItem] = [
                 URLQueryItem(name: "term", value: term),
                 URLQueryItem(name: "country", value: "KR"),
@@ -55,30 +54,34 @@ final class NetworkManager {
                 observer.onError(APIError.invalidURL)
                 return Disposables.create()
             }
+            let request = URLRequest(url: url)
             
-            let request = URLRequest(url: url, timeoutInterval: 5)
             URLSession.shared.dataTask(with: request) { data, response, error in
+                
                 if error != nil {
-                    print("에러 값 존재")
                     observer.onError(APIError.unknownResponse)
                     return
                 }
                 
                 guard let response = response as? HTTPURLResponse,
                       (200..<300).contains(response.statusCode) else {
-                    print("상태코드 에러")
                     observer.onError(APIError.statusError)
                     return
                 }
                 
-                if let data = data, let value = try? JSONDecoder().decode(ItunesResponse.self, from: data) {
-                    dump(value)
-                    observer.onNext(value)
-                    observer.onCompleted()
-                } else {
-                    print("디코딩 에러")
-                    observer.onError(APIError.decodingError)
+                guard let data = data else {
+                    observer.onError(APIError.noData)
+                    return
                 }
+                
+                guard let value = try? JSONDecoder().decode(ItunesResponse.self, from: data) else {
+                    observer.onError(APIError.decodingError)
+                    return
+                }
+                
+                observer.onNext(value)
+                observer.onCompleted()
+                
             }.resume()
             
             return Disposables.create()
@@ -86,5 +89,4 @@ final class NetworkManager {
         
         return result
     }
-    
 }

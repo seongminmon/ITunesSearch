@@ -15,6 +15,7 @@ final class SearchViewController: UIViewController {
     
     let searchBar = UISearchBar().then {
         $0.placeholder = "게임, 앱, 스토리 등"
+        // TODO: - editing 중 cancelButton 보이기
 //        $0.showsCancelButton = true
     }
     let tableView = UITableView().then {
@@ -22,31 +23,23 @@ final class SearchViewController: UIViewController {
         $0.rowHeight = 100
     }
     
-    let dummyData = PublishSubject<[ItunesItem]>()
+    let viewModel = SearchViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         bind()
-        
-        // 네트워크 통신 test
-        NetworkManager.shared.callRequest("kakaotalk")
-            .subscribe(with: self) { owner, value in
-                dump(value)
-                owner.dummyData.onNext(value.results)
-            } onError: { owner, error in
-                if let error = error as? APIError, let description = error.errorDescription {
-                    print(description)
-                } else {
-                    print("알 수 없는 에러")
-                }
-            }
-            .disposed(by: disposeBag)
     }
     
     func bind() {
-        dummyData
+        let input = SearchViewModel.Input(
+            searchText: searchBar.rx.text,
+            searchButtonTap: searchBar.rx.searchButtonClicked
+        )
+        let output = viewModel.transform(input: input)
+        
+        output.itunesList
             .bind(to: tableView.rx.items(
                 cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self
             )) { (row, element, cell) in
