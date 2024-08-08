@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
 import SnapKit
 import Then
 
@@ -29,8 +30,8 @@ final class SearchTableViewCell: UITableViewCell {
     let downloadButton = UIButton().then {
         $0.setTitle("받기", for: .normal)
         $0.setTitleColor(.systemBlue, for: .normal)
-        $0.isUserInteractionEnabled = true
         $0.backgroundColor = .lightGray
+        $0.isUserInteractionEnabled = true
         $0.layer.cornerRadius = 16
     }
     

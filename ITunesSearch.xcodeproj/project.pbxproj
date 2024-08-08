@@ -11,6 +11,8 @@
 		241E4F1B2C64ACF80001621A /* ItunesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F1A2C64ACF80001621A /* ItunesResponse.swift */; };
 		241E4F1D2C64B1E80001621A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F1C2C64B1E80001621A /* NetworkManager.swift */; };
 		241E4F1F2C64BBB30001621A /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F1E2C64BBB30001621A /* ViewModelType.swift */; };
+		241E4F212C64BC5A0001621A /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F202C64BC5A0001621A /* UIViewController+.swift */; };
+		241E4F272C64CA130001621A /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F262C64CA130001621A /* SearchDetailViewController.swift */; };
 		249F36B62C6497DA00AE58BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B52C6497DA00AE58BF /* AppDelegate.swift */; };
 		249F36B82C6497DA00AE58BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B72C6497DA00AE58BF /* SceneDelegate.swift */; };
 		249F36BA2C6497DA00AE58BF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B92C6497DA00AE58BF /* SearchViewController.swift */; };
@@ -37,6 +39,8 @@
 		241E4F1A2C64ACF80001621A /* ItunesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesResponse.swift; sourceTree = "<group>"; };
 		241E4F1C2C64B1E80001621A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		241E4F1E2C64BBB30001621A /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		241E4F202C64BC5A0001621A /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		241E4F262C64CA130001621A /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		249F36B22C6497DA00AE58BF /* ITunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249F36B52C6497DA00AE58BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		249F36B72C6497DA00AE58BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		241E4F222C64BE450001621A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				241E4F202C64BC5A0001621A /* UIViewController+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		241E4F232C64BE4B0001621A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				241E4F1E2C64BBB30001621A /* ViewModelType.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		241E4F242C64BE530001621A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				241E4F1C2C64B1E80001621A /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		241E4F252C64BE570001621A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				241E4F1A2C64ACF80001621A /* ItunesResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		249F36A92C6497DA00AE58BF = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +142,7 @@
 				249F36E42C649FA800AE58BF /* AppViewController.swift */,
 				249F36E62C649FC400AE58BF /* ArcadeViewController.swift */,
 				249F36B92C6497DA00AE58BF /* SearchViewController.swift */,
+				241E4F262C64CA130001621A /* SearchDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -118,9 +155,10 @@
 				249F36B72C6497DA00AE58BF /* SceneDelegate.swift */,
 				249F36BE2C6497DB00AE58BF /* Assets.xcassets */,
 				249F36C02C6497DB00AE58BF /* LaunchScreen.storyboard */,
-				241E4F1A2C64ACF80001621A /* ItunesResponse.swift */,
-				241E4F1C2C64B1E80001621A /* NetworkManager.swift */,
-				241E4F1E2C64BBB30001621A /* ViewModelType.swift */,
+				241E4F252C64BE570001621A /* Model */,
+				241E4F242C64BE530001621A /* Network */,
+				241E4F232C64BE4B0001621A /* Protocol */,
+				241E4F222C64BE450001621A /* Extension */,
 				249F36EA2C64A26A00AE58BF /* Source */,
 			);
 			path = Resource;
@@ -240,9 +278,11 @@
 			files = (
 				249F36E32C649F7B00AE58BF /* GameViewController.swift in Sources */,
 				249F36BA2C6497DA00AE58BF /* SearchViewController.swift in Sources */,
+				241E4F212C64BC5A0001621A /* UIViewController+.swift in Sources */,
 				249F36E52C649FA800AE58BF /* AppViewController.swift in Sources */,
 				241E4F1D2C64B1E80001621A /* NetworkManager.swift in Sources */,
 				249F36B62C6497DA00AE58BF /* AppDelegate.swift in Sources */,
+				241E4F272C64CA130001621A /* SearchDetailViewController.swift in Sources */,
 				241E4F192C64A6F10001621A /* SearchTableViewCell.swift in Sources */,
 				241E4F1F2C64BBB30001621A /* ViewModelType.swift in Sources */,
 				249F36E12C649F6400AE58BF /* TodayViewController.swift in Sources */,

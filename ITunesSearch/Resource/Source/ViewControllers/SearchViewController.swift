@@ -13,18 +13,18 @@ import Then
 
 final class SearchViewController: UIViewController {
     
-    let searchBar = UISearchBar().then {
+    private let searchBar = UISearchBar().then {
         $0.placeholder = "게임, 앱, 스토리 등"
         // TODO: - editing 중 cancelButton 보이기
 //        $0.showsCancelButton = true
     }
-    let tableView = UITableView().then {
+    private let tableView = UITableView().then {
         $0.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         $0.rowHeight = 100
     }
     
-    let viewModel = SearchViewModel()
-    let disposeBag = DisposeBag()
+    private let viewModel = SearchViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ final class SearchViewController: UIViewController {
         bind()
     }
     
-    func bind() {
+    private func bind() {
         let input = SearchViewModel.Input(
             searchText: searchBar.rx.text,
             searchButtonTap: searchBar.rx.searchButtonClicked
@@ -46,9 +46,39 @@ final class SearchViewController: UIViewController {
                 cell.configureCell(element)
             }
             .disposed(by: disposeBag)
+        
+        output.startNetworking
+            .bind(with: self) { owner, _ in
+                owner.showLoadingToast()
+            }
+            .disposed(by: disposeBag)
+        
+        output.endNetworking
+            .bind(with: self) { owner, _ in
+                DispatchQueue.main.async {
+                    owner.hideToast()
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        output.failureNetworking
+            .bind(with: self) { owner, value in
+                DispatchQueue.main.async {
+                    owner.showFailureToast(value)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(ItunesItem.self)
+            .subscribe(with: self) { owner, value in
+                let vc = SearchDetailViewController()
+                vc.data = value
+                owner.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
-    func configureView() {
+    private func configureView() {
         navigationItem.title = "검색"
         navigationController?.navigationBar.prefersLargeTitles = true
         
