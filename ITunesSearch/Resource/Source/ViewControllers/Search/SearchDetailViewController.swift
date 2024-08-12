@@ -34,7 +34,16 @@ final class SearchDetailViewController: UIViewController {
         $0.layer.cornerRadius = 16
     }
     
-    var data: ItunesItem?
+    private let data: ItunesItem
+    
+    init(data: ItunesItem) {
+        self.data = data
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +52,8 @@ final class SearchDetailViewController: UIViewController {
     }
     
     private func configureView() {
+        view.backgroundColor = .white
+        
         [appIconImageView, appNameLabel, downloadButton].forEach {
             scrollView.addSubview($0)
         }
@@ -78,7 +89,6 @@ final class SearchDetailViewController: UIViewController {
     }
     
     private func setData() {
-        guard let data else { return }
         let url = URL(string: data.artworkUrl60)
         appIconImageView.kf.setImage(with: url)
         appNameLabel.text = data.trackName
