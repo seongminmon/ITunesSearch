@@ -44,8 +44,26 @@ final class SearchViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+//        query
+//            .flatMap { NetworkManager.shared.callRequest($0) }
+//            .subscribe(with: self) { owner, result in
+//                endNetworking.onNext(())
+//                switch result {
+//                case .success(let value):
+//                    owner.itunesList = value.results
+//                    itunesList.onNext(owner.itunesList)
+//                case .failure(let error):
+//                    if let description = error.errorDescription {
+//                        failureNetworking.onNext(description)
+//                    } else {
+//                        failureNetworking.onNext("알 수 없는 에러")
+//                    }
+//                }
+//            }
+//            .disposed(by: disposeBag)
+        
         query
-            .flatMap { NetworkManager.shared.callRequest($0) }
+            .flatMap { NetworkManager.shared.callRequestWithObservable($0) }
             .subscribe(with: self) { owner, result in
                 endNetworking.onNext(())
                 switch result {

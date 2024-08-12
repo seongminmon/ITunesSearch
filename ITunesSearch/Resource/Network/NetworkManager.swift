@@ -36,7 +36,6 @@ final class NetworkManager {
     private init() {}
     
     func callRequest(_ term: String) -> Single<Result<ItunesResponse, APIError>> {
-        
         return Single<Result<ItunesResponse, APIError>>.create { observer in
             
             guard var urlComponents = URLComponents(string: APIURL.url) else {
@@ -80,6 +79,64 @@ final class NetworkManager {
                 }
                 
                 observer(.success(.success(value)))
+                
+            }.resume()
+            
+            return Disposables.create()
+        }
+    }
+    
+    func callRequestWithObservable(_ term: String) -> Observable<Result<ItunesResponse, APIError>> {
+        return Observable<Result<ItunesResponse, APIError>>.create { observer in
+            
+            guard var urlComponents = URLComponents(string: APIURL.url) else {
+                observer.onNext(.failure(APIError.invalidURL))
+                observer.onCompleted()
+                return Disposables.create()
+            }
+            let queryItems: [URLQueryItem] = [
+                URLQueryItem(name: "term", value: term),
+                URLQueryItem(name: "country", value: "KR"),
+                URLQueryItem(name: "media", value: "software")
+            ]
+            urlComponents.queryItems = queryItems
+            
+            guard let url = urlComponents.url else {
+                observer.onNext(.failure(APIError.invalidURL))
+                observer.onCompleted()
+                return Disposables.create()
+            }
+            let request = URLRequest(url: url, timeoutInterval: 3)
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                
+                if error != nil {
+                    observer.onNext(.failure(APIError.unknownResponse))
+                    observer.onCompleted()
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse,
+                      (200..<300).contains(response.statusCode) else {
+                    observer.onNext(.failure(APIError.statusError))
+                    observer.onCompleted()
+                    return
+                }
+                
+                guard let data = data else {
+                    observer.onNext(.failure(APIError.noData))
+                    observer.onCompleted()
+                    return
+                }
+                
+                guard let value = try? JSONDecoder().decode(ItunesResponse.self, from: data) else {
+                    observer.onNext(.failure(APIError.decodingError))
+                    observer.onCompleted()
+                    return
+                }
+                
+                observer.onNext(.success(value))
+                observer.onCompleted()
                 
             }.resume()
             
