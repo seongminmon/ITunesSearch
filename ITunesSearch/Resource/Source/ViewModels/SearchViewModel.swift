@@ -14,7 +14,6 @@ final class SearchViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
     private var itunesList = [ItunesItem]()
     
-    
     struct Input {
         let searchText: ControlProperty<String?>
         let searchButtonTap: ControlEvent<Void>
@@ -47,25 +46,19 @@ final class SearchViewModel: ViewModelType {
         
         query
             .flatMap { NetworkManager.shared.callRequest($0) }
-            .subscribe(with: self) { owner, value in
-                print("onNext")
-                owner.itunesList = value.results
-                itunesList.onNext(owner.itunesList)
+            .subscribe(with: self) { owner, result in
                 endNetworking.onNext(())
-            } onError: { owner, error in
-                print("onError")
-                endNetworking.onNext(())
-                
-                var message = ""
-                if let error = error as? APIError,
-                    let description = error.errorDescription {
-                    print(description)
-                    message = description
-                } else {
-                    print("알 수 없는 에러")
-                    message = "알 수 없는 에러"
+                switch result {
+                case .success(let value):
+                    owner.itunesList = value.results
+                    itunesList.onNext(owner.itunesList)
+                case .failure(let error):
+                    if let description = error.errorDescription {
+                        failureNetworking.onNext(description)
+                    } else {
+                        failureNetworking.onNext("알 수 없는 에러")
+                    }
                 }
-                failureNetworking.onNext(message)
             }
             .disposed(by: disposeBag)
         
