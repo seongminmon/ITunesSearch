@@ -35,12 +35,12 @@ final class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    func callRequest(_ term: String) -> Observable<ItunesResponse> {
+    func callRequest(_ term: String) -> Single<Result<ItunesResponse, APIError>> {
         
-        let result = Observable<ItunesResponse>.create { observer in
+        return Single<Result<ItunesResponse, APIError>>.create { observer in
             
             guard var urlComponents = URLComponents(string: APIURL.url) else {
-                observer.onError(APIError.invalidURL)
+                observer(.success(.failure(APIError.invalidURL)))
                 return Disposables.create()
             }
             let queryItems: [URLQueryItem] = [
@@ -51,42 +51,39 @@ final class NetworkManager {
             urlComponents.queryItems = queryItems
             
             guard let url = urlComponents.url else {
-                observer.onError(APIError.invalidURL)
+                observer(.success(.failure(APIError.invalidURL)))
                 return Disposables.create()
             }
-            let request = URLRequest(url: url)
+            let request = URLRequest(url: url, timeoutInterval: 3)
             
             URLSession.shared.dataTask(with: request) { data, response, error in
                 
                 if error != nil {
-                    observer.onError(APIError.unknownResponse)
+                    observer(.success(.failure(APIError.unknownResponse)))
                     return
                 }
                 
                 guard let response = response as? HTTPURLResponse,
                       (200..<300).contains(response.statusCode) else {
-                    observer.onError(APIError.statusError)
+                    observer(.success(.failure(APIError.statusError)))
                     return
                 }
                 
                 guard let data = data else {
-                    observer.onError(APIError.noData)
+                    observer(.success(.failure(APIError.noData)))
                     return
                 }
                 
                 guard let value = try? JSONDecoder().decode(ItunesResponse.self, from: data) else {
-                    observer.onError(APIError.decodingError)
+                    observer(.success(.failure(APIError.decodingError)))
                     return
                 }
                 
-                observer.onNext(value)
-                observer.onCompleted()
+                observer(.success(.success(value)))
                 
             }.resume()
             
             return Disposables.create()
         }
-        
-        return result
     }
 }
