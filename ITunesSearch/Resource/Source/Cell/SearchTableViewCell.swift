@@ -13,21 +13,19 @@ import Then
 
 final class SearchTableViewCell: UITableViewCell {
     
-    static let identifier = "SearchTableViewCell"
-    
-    let appNameLabel = UILabel().then {
+    private let appNameLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 18, weight: .bold)
         $0.textColor = .black
     }
     
-    let appIconImageView = UIImageView().then {
+    private let appIconImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.clipsToBounds = true
         $0.backgroundColor = .systemMint
         $0.layer.cornerRadius = 8
     }
     
-    let downloadButton = UIButton().then {
+    private let downloadButton = UIButton().then {
         $0.setTitle("받기", for: .normal)
         $0.setTitleColor(.systemBlue, for: .normal)
         $0.backgroundColor = .lightGray

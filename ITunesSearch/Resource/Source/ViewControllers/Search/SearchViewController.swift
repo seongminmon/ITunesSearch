@@ -13,11 +13,10 @@ import Then
 
 final class SearchViewController: UIViewController {
     
-    private let searchBar = UISearchBar().then {
-        $0.placeholder = "게임, 앱, 스토리 등"
-        // TODO: - editing 중 cancelButton 보이기
-//        $0.showsCancelButton = true
+    private let searchController = UISearchController(searchResultsController: nil).then {
+        $0.searchBar.placeholder = "게임, 앱, 스토리 등"
     }
+    
     private let tableView = UITableView().then {
         $0.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         $0.rowHeight = 100
@@ -34,8 +33,8 @@ final class SearchViewController: UIViewController {
     
     private func bind() {
         let input = SearchViewModel.Input(
-            searchText: searchBar.rx.text,
-            searchButtonTap: searchBar.rx.searchButtonClicked
+            searchText: searchController.searchBar.rx.text,
+            searchButtonTap: searchController.searchBar.rx.searchButtonClicked
         )
         let output = viewModel.transform(input: input)
         
@@ -71,28 +70,22 @@ final class SearchViewController: UIViewController {
         
         tableView.rx.modelSelected(ItunesItem.self)
             .subscribe(with: self) { owner, value in
-                let vc = SearchDetailViewController()
-                vc.data = value
+                let vc = SearchDetailViewController(data: value)
                 owner.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
     }
     
     private func configureView() {
+        view.backgroundColor = .white
         navigationItem.title = "검색"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
         
-        [searchBar, tableView].forEach {
-            view.addSubview($0)
-        }
-        
-        searchBar.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.horizontalEdges.equalToSuperview()
-        }
+        view.addSubview(tableView)
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(16)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(8)
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }

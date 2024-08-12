@@ -13,6 +13,7 @@
 		241E4F1F2C64BBB30001621A /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F1E2C64BBB30001621A /* ViewModelType.swift */; };
 		241E4F212C64BC5A0001621A /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F202C64BC5A0001621A /* UIViewController+.swift */; };
 		241E4F272C64CA130001621A /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F262C64CA130001621A /* SearchDetailViewController.swift */; };
+		241E4F402C69FD4F0001621A /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E4F3F2C69FD4F0001621A /* ReuseIdentifierProtocol.swift */; };
 		249F36B62C6497DA00AE58BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B52C6497DA00AE58BF /* AppDelegate.swift */; };
 		249F36B82C6497DA00AE58BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B72C6497DA00AE58BF /* SceneDelegate.swift */; };
 		249F36BA2C6497DA00AE58BF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F36B92C6497DA00AE58BF /* SearchViewController.swift */; };
@@ -41,6 +42,7 @@
 		241E4F1E2C64BBB30001621A /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		241E4F202C64BC5A0001621A /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		241E4F262C64CA130001621A /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		241E4F3F2C69FD4F0001621A /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 		249F36B22C6497DA00AE58BF /* ITunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249F36B52C6497DA00AE58BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		249F36B72C6497DA00AE58BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				241E4F1E2C64BBB30001621A /* ViewModelType.swift */,
+				241E4F3F2C69FD4F0001621A /* ReuseIdentifierProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -105,6 +108,34 @@
 				241E4F1A2C64ACF80001621A /* ItunesResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		241E4F3C2C69F8AB0001621A /* unused */ = {
+			isa = PBXGroup;
+			children = (
+				249F36E02C649F6400AE58BF /* TodayViewController.swift */,
+				249F36E22C649F7B00AE58BF /* GameViewController.swift */,
+				249F36E42C649FA800AE58BF /* AppViewController.swift */,
+				249F36E62C649FC400AE58BF /* ArcadeViewController.swift */,
+			);
+			path = unused;
+			sourceTree = "<group>";
+		};
+		241E4F3D2C69F8CB0001621A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				249F36B92C6497DA00AE58BF /* SearchViewController.swift */,
+				241E4F262C64CA130001621A /* SearchDetailViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		241E4F3E2C69F8D00001621A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				249F36DE2C649ED500AE58BF /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		249F36A92C6497DA00AE58BF = {
@@ -136,13 +167,9 @@
 		249F36E82C64A22800AE58BF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				249F36DE2C649ED500AE58BF /* TabBarController.swift */,
-				249F36E02C649F6400AE58BF /* TodayViewController.swift */,
-				249F36E22C649F7B00AE58BF /* GameViewController.swift */,
-				249F36E42C649FA800AE58BF /* AppViewController.swift */,
-				249F36E62C649FC400AE58BF /* ArcadeViewController.swift */,
-				249F36B92C6497DA00AE58BF /* SearchViewController.swift */,
-				241E4F262C64CA130001621A /* SearchDetailViewController.swift */,
+				241E4F3E2C69F8D00001621A /* TabBar */,
+				241E4F3C2C69F8AB0001621A /* unused */,
+				241E4F3D2C69F8CB0001621A /* Search */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -283,6 +310,7 @@
 				241E4F1D2C64B1E80001621A /* NetworkManager.swift in Sources */,
 				249F36B62C6497DA00AE58BF /* AppDelegate.swift in Sources */,
 				241E4F272C64CA130001621A /* SearchDetailViewController.swift in Sources */,
+				241E4F402C69FD4F0001621A /* ReuseIdentifierProtocol.swift in Sources */,
 				241E4F192C64A6F10001621A /* SearchTableViewCell.swift in Sources */,
 				241E4F1F2C64BBB30001621A /* ViewModelType.swift in Sources */,
 				249F36E12C649F6400AE58BF /* TodayViewController.swift in Sources */,
